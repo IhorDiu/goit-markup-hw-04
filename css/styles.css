@@ -71,12 +71,10 @@ h2, h3, .menu-link {
 .section {
     padding-top: 94px;
     padding-bottom: 94px;
-    /* outline: 2px solid blueviolet; */
 }
 
 .container {
      width: 1200px;
-    /* outline: 2px solid tomato; */
     padding-left: 15px;
     padding-right: 15px;
     margin-left: auto;
@@ -135,12 +133,12 @@ h2, h3, .menu-link {
     margin-right: 50px;
 }
 
-.menu-link, .contact-link {
-    display: inline;
+.menu-link, .contact-link-mail,
+.contact-link-tel {
+    display: flex;
     padding-top: 32px;
     padding-bottom: 32px;
 }
-
 
 .menu,
 .contacts {
@@ -149,37 +147,76 @@ h2, h3, .menu-link {
         line-height: 1.14;
         letter-spacing: 0.02em;
 }
-.contact-link {
-        color: var(--primary-text-color-theme-light);
+
+.contact-link-mail, .contact-link-tel {
+    color: var(--primary-text-color-theme-light);
 }
+
 .menu-link:hover,
 .menu-link:focus,
-.contact-link:hover,
-.contact-link:focus,
+.contact-link-mail:hover,
+.contact-link-tel:hover,
+.contact-link-mail:focus,
+.contact-link-tel:focus,
 .footer-address:hover,
 .footer-address:focus,
 .footer-link:hover,
 .footer-link:focus,
-.current
- {
-   color: var(--accent-color);
-
-
+.current {
+   color: var(--accent-color);  
 }
+
 /*Contacts */
 .contacts {
     margin-left: auto;
 }
 
+.contact-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    background-image: #757575;
+}
 
+.contact-link-mail-icon {
+    width: 16px;
+    height: 12px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    }
 
+.contact-link-tel-icon {
+    width: 10px;
+    height: 16px;
+}
+ 
+.contact-link-mail:hover .contact-link-mail-icon,
+.contact-link-tel:hover .contact-link-tel-icon,
+.contact-link-mail:focus .contact-link-mail-icon,
+.contact-link-tel:focus .contact-link-tel-icon {
+    fill: var(--accent-color);
+}
 
-/* ===================MAIN PAGE=================== */
+ /* ===================MAIN PAGE=================== */
 
 /* ===================/HEADER=================== */
 /* ===================HERO-SECTION=================== */
 .hero-section {
-    background-color: var(--background-color-header-section);
+    max-width:  1600px;
+    min-height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image:  linear-gradient(
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)),
+        url(../images/Main/bg_hero.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+
+    background-color: #C4C4C4;
     text-align: center;
     padding-top: 200px;
     padding-bottom: 200px;
@@ -239,27 +276,38 @@ h2, h3, .menu-link {
 }
 
 .features-list {
-    flex-basis: calc((100% - 30px*3) / 4);
+    display: flex;
+    justify-content: center;
+    column-gap: 30px;
 }
  .features-list-head {
      font-weight: 700;
      font-size: 14px;
      line-height: 1.14;
      text-transform: uppercase;
-    margin-bottom: 10px;
+     margin-bottom: 10px;
  }
 
  .features-list-means {
-        font-size: 14px;
-        line-height: 1.71;        b
+     font-size: 14px;
+     line-height: 1.71;
  }
-  
- .features-section .list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 30px;
-        
-} 
+
+ .features-list-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 270px;
+    height: 120px;
+    background: #F5F4FA;
+    border-radius: 4px;
+    margin-bottom: 30px;
+ }
+.features-icon {
+    width: 70px;
+    height: 70px;    
+}
+
 /* ===================/FEATURES-SECTION=================== */
 /* ===================SKILL-SECTION=================== */
 .skill-name {
@@ -268,7 +316,8 @@ h2, h3, .menu-link {
         line-height: 1.16;
         text-align: center;
         margin-bottom: 50px;
-    }
+}
+
 .skill-section .list {
     display: flex;
     flex-wrap: wrap;
@@ -286,9 +335,7 @@ h2, h3, .menu-link {
         .our-team {
             background-color: var(--background-color-our-team);
         }
-        /* .our-team-list:not(:last-child) {
-            margin-right: 30px;
-        } */
+
         .our-team-list {
             background-color: var(--background-color-our-team-list);
             
@@ -299,53 +346,127 @@ h2, h3, .menu-link {
             border-radius: 0px 0px 4px 4px;
         }
 
-    .team-name {
+.team-name {
         padding: 30px;
-        }
-     .team-name-list {
+    }
+
+.team-name-list {
             font-weight: 500;
             font-size: 16px;
             line-height: 1.19;
             text-align: center;
             margin-bottom: 10px;
-     }
-    .team-name-professions {
+}
+.team-name-professions {
             font-size: 16px;
             line-height: 1.19;
             text-align: center;
-    }
+            margin-bottom: 16px;
+ }
 
-        .our-team .list {
+.our-team-box {
             display: flex;
             flex-wrap: wrap;
             gap: 30px;    
-        }
+ }
+
+ .social-list {
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+ }
+
+.social-list-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #FFFFFF;
+
+}
+
+.social-list-link:hover,
+.social-list-link:focus {
+    background-color: #2196F3;;
+    
+}
+
+.social-list-icon {
+    width: 20px;
+    height: 20px;
+    fill: #AFB1B8;
+}
+
+.social-list-link:hover .social-list-icon,
+.social-list-link:focus .social-list-icon {
+    fill: #FFFFFF;
+}
 /* ===================/OUR TEAM-SECTION=================== */
 
-/* ===================FOOTER=================== */
-/* .logo {
-    font-family: var(--secondary-font);
-    font-weight: 700;
-    font-size: 26px;
-    line-height: 1.19;
+ /* ===================Regular customers=================== */
 
-    color: var(--accent-color);
+ .clients-list {
+    display: flex;
+    justify-content: center;
+    column-gap: 30px;
 }
- */
+
+.clients-list-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 170px;
+    height: 92px;
+    border: 1px solid #AFB1B8;
+    border-radius: 4px;
+}
+
+.clients-list-icon {
+    width: 106px;
+    height: 60px;
+    fill: #AFB1B8;
+}
+
+.clients-list-link:hover,
+.clients-list-link:focus {
+    border: 1px solid #2196F3;
+}
+
+.clients-list-link:hover .clients-list-icon,
+.clients-list-link:focus .clients-list-icon {
+    fill: #2196F3;
+}
+
+ /* ===================/Regular customers=================== */
+
+/* ===================FOOTER=================== */
+
 .footer {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        
     background-color: var(--background-color-footer);
 }
+
+.footer-items {
+    display: flex;
+    column-gap: 70px;
+    align-items: baseline;
+    }
+
 .studio-white {
     color: var(--logo-color-light);
 }
 
 .logo-footer {
-            font-family: var(--secondary-font);
-            font-weight: 700;
-            font-size: 26px;
-            line-height: 1.19;
+        font-family: var(--secondary-font);
+        font-weight: 700;
+        font-size: 26px;
+        line-height: 1.19;
     
-            color: var(--accent-color);
+        color: var(--accent-color);
 
 }
 
@@ -354,7 +475,6 @@ h2, h3, .menu-link {
 }
 
 .footer-list {
-  
     font-size: 14px;
     line-height: 1.71;
     font-style: normal;
@@ -364,26 +484,56 @@ h2, h3, .menu-link {
     margin-bottom: 9px;
 }
 
-    .footer-address {
-                color: var(--primary-text-color-theme-dark);
+.footer-address {
+        color: var(--primary-text-color-theme-dark);
 }
 .footer-link {
         color: var(--footer-link-text-color);
 }
-/* .footer-address:hover,
-.footer-address:focus,
-.footer-link:hover,
-.footer-link:focus
- {
-    color: var(--accent-color);
-} */
 
-.footer {
-    padding-top: 60px;
-    padding-bottom: 60px;
+/* ===================Subscribe=================== */
+
+
+
+
+.footer-link-header {
+        font-size: 14px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    
+        color: #FFFFFF;
 }
 
-/* ===================/FOOTER=================== */
+.footer-social-list {
+     display: flex;
+     justify-content: center;
+     column-gap: 10px;
+ }
+
+ .footer-social-list-link {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 44px;
+     height: 44px;
+     border-radius: 50%;
+     background: rgba(255, 255, 255, 0.1);
+
+ }
+
+ .footer-social-list-link:hover,
+ .footer-social-list-link:focus {
+     background-color: #2196F3;
+ }
+
+ .footer-social-list-icon {
+     width: 20px;
+     height: 20px;
+     fill: #FFFFFF;
+ }
+
+/* ===================/Subscribe=================== */
+/* ===================/FOOTER=========+++========== */
 /* ===================/MAIN PAGE=================== */
 
 /* ===================PORTFOLIO PAGE=================== */
@@ -439,7 +589,9 @@ h2, h3, .menu-link {
 
         color: var(--color-active-portfolio-btn);
         background: var(--accent-color);
-        box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+        box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+         0px 1px 2px rgba(0, 0, 0, 0.08),
+          0px 2px 2px rgba(0, 0, 0, 0.12);
         border-radius: 4px;
 }
 
@@ -454,20 +606,20 @@ h2, h3, .menu-link {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
-    
 }
 
-/* 
-.features-list {
-    flex-basis: calc((100% - 30px*3) / 4);
-} */
 .porfolio-skills-link {
-        width: 370px;    
+    width: 370px;    
 
-        background: var(--primary-background-color);
-        border: 1px solid var(--color-porfolio-skills-border);
+    background: var(--primary-background-color);
+    border: 1px solid var(--color-porfolio-skills-border);       
 }
 
+.porfolio-skills-link:hover {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+    0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
 .porfolio-skills-header {
         margin-bottom: 4px;
 
